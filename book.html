@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+	<link rel="icon" href="logo.png">
+    <title>Ticket booking</title>
+</head>
+
+<style>
+.form-inputs
+{
+	width:250px;
+	height:35px;
+	border:1px solid rgb(224, 223, 218);
+	border-radius:7px;
+}
+
+select
+{
+	width:190px;
+	height:35px;
+	border:1px solid rgb(224, 223, 218);
+	border-radius:7px;
+}
+
+</style>
+<body>
+
+
+
+  
+  <nav class="navbar navbar-expand-lg navbar-light ">
+  <div class="container-fluid">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+	<img src="logo.png" height=50px width=75px>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="Taj_gallary.html">Gallary</a>
+        <a class="nav-link" href="#" onclick="about()">About</a>
+        <a class="nav-link" href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<br>
+<br>
+
+<p class="text-primary fs-2 text-center fw-bold">Book Ticket</p>
+
+<br>
+<br>
+<br>
+
+<div class="container">
+  <form style="width:60%;margin-left:20%">
+    
+      <label for="fname">First Name</label>
+      <input type="name" class="form-inputs" id="name" placeholder="Enter first name">
+   
+    
+      <label for="name">Last Name:</label>
+      <input type="name" class="form-inputs" id="lname" placeholder="Enter last name">
+    
+	<br>
+	<br>
+	
+	  <label for="email">Email:</label>
+      <input type="email" class="form-inputs" id="email" placeholder="Enter Email">
+	  
+      
+      <label for="phno">Phone Number:</label>
+      <input type="number" class="form-inputs" id="phno" placeholder="Enter phone number">
+	  
+	<br>
+	<br>
+	
+	  <label for="phno">Age:</label>
+      <input type="number" class="form-inputs" id="age" placeholder="Enter phone number">
+	 
+      <label for="state">Gender:</label>
+	  <input type="radio" name="gender"checked>Male
+	  <input type="radio" name="gender">Female	 
+	<br>
+	<br>
+	
+	<label for="state">State:</label>
+	<select  aria-label="state" >
+		<option selected>Select State</option>
+		<option value="1">Kerala</option>
+		<option value="2">TamilNadu</option>
+		<option value="3">Karnataka</option>
+		<option value="3">Andrapradesh</option>
+	</select>
+	
+	
+	  <label for="city">City:</label>
+      <input type="name" class="form-inputs" id="city">
+    <br>
+	<br>
+  
+      <label for="pin">Date of Depature</label>
+      <input type="date" class="form-inputs" id="pin">
+    <br>
+    <br>
+	
+	  <label for="tc">Ticket count:</label>
+      <input type="text" class="form-inputs" id="count" placeholder="How many tickets do you want?">
+	<br>
+	<br>
+      <label for="state">Our Packages:</label>
+	  <input type="radio" name="package" onclick="amount(3)">Three day package
+	  <input type="radio" name="package" onclick="amount(2)">Two day package	 
+	<br>
+    <br>  
+	  
+	Amount:
+	 <input type="number" class="form-inputs" id="pay" disabled>
+	
+	<br>
+    <br>  
+    <button type="submit" class="btn btn-success">Book Now</button>
+  </form>
+</div>
+
+<script>
+
+function amount(pack)
+{
+	var no=parseInt(document.getElementById("count").value);
+	var total;
+	if(pack==2)
+	{
+		total=no*2756;
+	}
+	
+	if(pack==3)
+	{
+		total=no*3756;
+	}
+	
+	document.getElementById("pay").value=total;
+
+}	
+</script>	
+</body>
+</html>
